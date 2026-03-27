@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Agents | Augusta CS</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Space_Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "secondary-fixed-dim": "#b2d269",
+              "secondary-fixed": "#ceef82",
+              "on-error": "#ffffff",
+              "surface": "#f8faf5",
+              "on-surface-variant": "#414845",
+              "primary-fixed": "#c2ebdc",
+              "on-secondary-fixed": "#151f00",
+              "secondary": "#4d6703",
+              "primary-container": "#0c342a",
+              "surface-container-highest": "#e1e3de",
+              "on-secondary-fixed-variant": "#394d00",
+              "on-error-container": "#93000a",
+              "outline-variant": "#c1c8c4",
+              "primary": "#001e16",
+              "on-tertiary-fixed-variant": "#1b4f42",
+              "on-primary-fixed-variant": "#284e43",
+              "tertiary": "#001e17",
+              "surface-container": "#ecefea",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#9dd1c0",
+              "tertiary-container": "#00352a",
+              "on-surface": "#191c1a",
+              "outline": "#717975",
+              "on-background": "#191c1a",
+              "surface-container-high": "#e7e9e4",
+              "surface-bright": "#f8faf5",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#eff1ec",
+              "surface-dim": "#d8dbd6",
+              "inverse-primary": "#a7cfc0",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#b8eedc",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "background": "#f8faf5",
+              "on-secondary-container": "#516b08",
+              "primary-fixed-dim": "#a7cfc0",
+              "on-tertiary-container": "#6c9f90",
+              "on-tertiary-fixed": "#002019",
+              "surface-variant": "#e1e3de",
+              "surface-tint": "#40665a",
+              "on-primary-fixed": "#002019",
+              "surface-container-low": "#f2f4ef",
+              "inverse-surface": "#2e312e",
+              "secondary-container": "#cbec7f",
+              "on-primary-container": "#769d90"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .tonal-shift { background-color: #0c342a; }
+        .tonal-shift-recessed { background-color: #e7e9e4; }
+        .glass-header { backdrop-filter: blur(12px); }
+        .broken-grid-offset { transform: translate(1.5rem, -1.5rem); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8faf5]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<a href="index.html" class="text-xl font-bold text-[#001e16] tracking-tighter font-headline">Augusta CS</a>
+<div class="hidden md:flex items-center space-x-8 font-headline font-semibold tracking-tight">
+<a class="text-[#191c1a] hover:text-[#4d6703] transition-colors" href="index.html">Home</a>
+<a class="text-[#191c1a] hover:text-[#4d6703] transition-colors" href="service.html">Services</a>
+<a class="text-[#4d6703] border-b-2 border-[#4d6703] pb-1" href="ai-agents.html">AI Agents</a>
+<a class="text-[#191c1a] hover:text-[#4d6703] transition-colors" href="#">Case Studies</a>
+<a class="text-[#191c1a] hover:text-[#4d6703] transition-colors" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-semibold hover:opacity-80 transition-all duration-300 active:scale-95">
+                Get Started
+            </a>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center overflow-hidden bg-primary px-8">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-secondary blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+</div>
+<div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10">
+<div>
+<span class="font-label text-secondary-fixed tracking-widest uppercase text-xs mb-4 block">Engineered Workforce</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-surface leading-[1.1] tracking-tighter mb-8">Scale your team with AI Agents.</h1>
+<p class="text-surface-container-high text-lg md:text-xl max-w-lg mb-10 leading-relaxed opacity-90">Stop buying software. Start hiring autonomous intelligence. Our AI Agents don't just process data—they own outcomes, manage workflows, and integrate seamlessly into your existing org chart.</p>
+<div class="flex flex-wrap gap-4">
+<a href="contact.html" class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-md font-headline font-bold text-lg hover:bg-secondary-fixed transition-all active:scale-95">Hire Your First Agent</a>
+<button class="border border-outline-variant/30 text-surface px-8 py-4 rounded-md font-headline font-bold text-lg hover:bg-white/5 transition-all">View Role Catalog</button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-primary-container rounded-xl overflow-hidden relative border border-secondary/20">
+<img class="w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Abstract neural network visualization with green light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKINJc0jKgyuMBbc5mIm99YhO10SabBdvk5DDF-9jVhQiabrxELjqh0T_NnWRkL3kGa-O4aWsu_cAU4Xl0LP6zQ_bjXCjWxz3PReoomYxW7FvuQ6uZxmIF2gNyOgCgatT7vAL_214yubOWKmS-3sBgLlJZy1uFd9RRBWMjl1dlQ1CItjGrcYJUYjKNqMMGiwUnfF73T74p9Mm36C1aN8t5_PT5KrGe2J_Q3PnATPJu1znOinc_pxSlGYvDfJoD2TcfaZ_bBPSN84t9"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="p-6 bg-surface-container-lowest/10 backdrop-blur-xl border border-white/10 rounded-xl space-y-4 w-64 shadow-2xl">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></div>
+<span class="font-label text-[10px] text-surface-container-high uppercase tracking-tighter">Agent Status: Active</span>
+</div>
+<div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4"></div>
+</div>
+<p class="font-headline text-surface font-medium text-sm">Processing Lead Handoff...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Staffing, Not Software -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-3 gap-12 items-start">
+<div class="md:col-span-1">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-primary mb-6">Staffing, Not Software.</h2>
+<p class="text-on-surface-variant leading-relaxed">Unlike traditional SaaS tools that require manual input, our agents are built to take initiative. We treat AI implementation as a recruitment process, ensuring every digital employee has a clear mandate and defined KPI.</p>
+</div>
+<div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">assignment_ind</span>
+<h3 class="font-headline font-bold text-xl mb-2">Defined Roles</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Agents are assigned specific job descriptions, not just feature sets. They know where their responsibility begins and where it ends.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary mb-4 text-3xl">handshake</span>
+<h3 class="font-headline font-bold text-xl mb-2">Seamless Handoffs</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Our proprietary protocol ensures that when an agent reaches the limit of its autonomy, the handoff to a human colleague is context-rich and frictionless.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The AI Employee Job Description (Bento Grid) -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="font-label text-secondary tracking-widest uppercase text-xs mb-2 block">Role Catalog</span>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-primary">The AI Employee Job Descriptions</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
+<!-- Role 1: Customer Support -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<div class="font-label text-secondary text-xs font-bold mb-4">ROLE ID: CS-01</div>
+<h3 class="font-headline text-3xl font-bold mb-4">L1 Support Specialist</h3>
+<ul class="space-y-2 text-on-surface-variant max-w-md">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> 24/7 instant ticket triage and resolution</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Multi-language empathetic engagement</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Documentation and knowledge base updates</li>
+</ul>
+</div>
+<div class="absolute bottom-0 right-0 w-1/3 h-full opacity-10 group-hover:scale-110 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="Modern workspace with diverse people collaborating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXeh9IpiArPIhABOOVu8MCdHTzC4OJ-vPYnhJrXv1dHCGMLJ7LRngtpBuGkEdNDAFPzHOSv9-rtwvc1XFohbEmjuDA7VemR0OZKNmsg_sQa5SSdJ7zP0qUuWe8E0biqtDUsnZFdTC2CyhK5v6ruhb_qIsmklh73z6KtK3-PJqhl7yMGfUlOaN63k49QnVnN8aqKTEmoXjdydfYpWTqhmAw7jyXhT_ZbjifRzMXDD0Uo8DzHjczJuMKxe-3u4-v6Hg2pv1t02jPS77I"/>
+</div>
+</div>
+<!-- Role 2: Lead Gen -->
+<div class="md:col-span-4 bg-primary text-surface rounded-xl p-8 flex flex-col justify-between border border-secondary/30">
+<div>
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4">query_stats</span>
+<h3 class="font-headline text-2xl font-bold mb-2">Lead Qualification</h3>
+<p class="text-sm opacity-80 leading-relaxed">Autonomous outreach, meeting scheduling, and CRM enrichment based on your ideal customer profile.</p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<span class="font-label text-[10px] text-secondary-fixed uppercase tracking-widest">KPI: 85% MQL Conversion</span>
+</div>
+</div>
+<!-- Role 3: Data Analyst -->
+<div class="md:col-span-4 bg-secondary-container text-on-secondary-container rounded-xl p-8 flex flex-col justify-center gap-4">
+<h3 class="font-headline text-2xl font-bold">Executive Assistant</h3>
+<p class="text-sm opacity-90">Calendar management, briefing preparation, and inbox prioritization. The ultimate force multiplier for leadership.</p>
+<button class="bg-primary text-white text-xs font-bold py-2 px-4 rounded self-start mt-2">View Full JD</button>
+</div>
+<!-- Role 4: Workflow Orchestrator -->
+<div class="md:col-span-8 bg-surface-container-highest rounded-xl p-8 relative overflow-hidden">
+<div class="flex h-full items-center justify-between gap-8">
+<div class="max-w-sm">
+<h3 class="font-headline text-3xl font-bold mb-4">Operations Manager</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Connecting disparate software silos to automate entire departmental functions. The brain behind your backend.</p>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/20 inline-flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">alt_route</span>
+<span class="font-label text-xs font-bold">ORCHESTRATION ENGINE v4.2</span>
+</div>
+</div>
+<div class="hidden lg:block w-48 h-48 bg-white/40 rounded-full border border-secondary/20 flex items-center justify-center p-8">
+<span class="material-symbols-outlined text-6xl text-secondary">hub</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Onboarding Process -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+<div class="inline-block px-4 py-1 bg-secondary/10 text-secondary font-label text-xs font-bold rounded-full mb-6">The 90-Day Roadmap</div>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-primary mb-8">The Onboarding Process</h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-surface flex items-center justify-center font-headline font-bold">01</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Shadowing &amp; Intake (Day 1-15)</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Our implementation architects observe your workflows and feed context-specific data into the agent's core logic.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline font-bold">02</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Guided Execution (Day 16-45)</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">The agent begins taking actions in a "human-in-the-loop" environment. Every output is reviewed and tuned for tone and accuracy.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-headline font-bold">03</div>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Autonomous Operations (Day 46+)</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Monthly performance reviews and continuous tuning to ensure the agent scales with your business growth.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 bg-primary-container rounded-2xl p-12 relative">
+<div class="space-y-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-secondary shadow-lg">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-[10px] font-bold text-secondary uppercase tracking-widest">Performance Metric</span>
+<span class="text-primary font-bold text-lg">99.2%</span>
+</div>
+<div class="text-primary font-headline font-bold text-sm">Accuracy during autonomous phase</div>
+</div>
+<div class="bg-surface-container-lowest/5 backdrop-blur-md p-6 rounded-xl border border-white/10">
+<div class="font-headline text-surface text-lg font-bold mb-2">"Agent 04 demonstrated high-context reasoning during the Q3 rush."</div>
+<div class="text-white/60 text-xs italic">— Performance Review Snippet</div>
+</div>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary opacity-30 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Performance Monitoring & Retainer Options -->
+<section class="py-24 px-8 bg-primary">
+<div class="max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden grid md:grid-cols-2">
+<div class="p-12 md:p-16">
+<h2 class="font-headline text-4xl font-extrabold text-primary mb-6 tracking-tight">Enterprise Retainer Models</h2>
+<p class="text-on-surface-variant mb-10 leading-relaxed">We don't sell licenses. We sell outcomes. Our monthly staffing retainer includes continuous agent improvement, security patching, and executive oversight.</p>
+<div class="space-y-6 mb-10">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl">monitoring</span>
+</div>
+<div>
+<div class="font-bold text-primary">Live Performance Dashboards</div>
+<div class="text-xs text-on-surface-variant">Real-time oversight of every AI employee action.</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+</div>
+<div>
+<div class="font-bold text-primary">Monthly Cognitive Tuning</div>
+<div class="text-xs text-on-surface-variant">Adjusting agent reasoning as your strategy evolves.</div>
+</div>
+</div>
+</div>
+<a href="contact.html" class="w-full bg-primary text-white py-4 rounded-md font-headline font-bold text-lg hover:bg-primary-container transition-all block text-center">Request Managed Proposal</a>
+</div>
+<div class="bg-[#0c342a] p-12 flex items-center justify-center relative">
+<div class="text-center relative z-10">
+<div class="text-secondary-fixed text-6xl font-headline font-black mb-2">24/7</div>
+<div class="text-white/80 font-label tracking-widest uppercase text-xs mb-8">Active Surveillance</div>
+<div class="inline-block p-4 bg-white/5 border border-white/10 rounded-xl">
+<div class="flex gap-2">
+<div class="w-1 h-8 bg-secondary rounded-full"></div>
+<div class="w-1 h-12 bg-secondary rounded-full"></div>
+<div class="w-1 h-10 bg-secondary rounded-full"></div>
+<div class="w-1 h-6 bg-secondary rounded-full"></div>
+<div class="w-1 h-14 bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Abstract Grid -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#cbec7f 1px, transparent 0); background-size: 24px 24px;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-8 text-center bg-surface">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline text-5xl font-extrabold text-primary mb-6 tracking-tighter">Ready to expand?</h2>
+<p class="text-on-surface-variant text-lg mb-10">Schedule a workforce audit to identify which departments are ready for autonomous integration.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="contact.html" class="bg-secondary text-white px-10 py-4 rounded-md font-headline font-bold">Book a Talent Consultation</a>
+<button class="border border-outline text-primary px-10 py-4 rounded-md font-headline font-bold hover:bg-surface-container-low transition-all">Download Capability Deck</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#e7e9e4] dark:bg-[#0c342a] w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-7xl mx-auto">
+<div>
+<div class="text-lg font-black text-[#001e16] dark:text-[#cbec7f] font-headline mb-4 uppercase tracking-tighter">Augusta CS</div>
+<p class="text-[#191c1a]/70 dark:text-[#f8faf5]/70 text-sm max-w-sm font-body">© 2024 Augusta CS. Engineered Intelligence. Redefining the modern workforce through autonomous systems.</p>
+</div>
+<div class="flex flex-wrap md:justify-end gap-x-8 gap-y-4">
+<a class="text-[#191c1a]/70 dark:text-[#f8faf5]/70 font-body text-sm hover:text-[#4d6703] dark:hover:text-[#cbec7f] transition-all" href="#">Privacy Policy</a>
+<a class="text-[#191c1a]/70 dark:text-[#f8faf5]/70 font-body text-sm hover:text-[#4d6703] dark:hover:text-[#cbec7f] transition-all" href="#">Terms of Service</a>
+<a class="text-[#191c1a]/70 dark:text-[#f8faf5]/70 font-body text-sm hover:text-[#4d6703] dark:hover:text-[#cbec7f] transition-all" href="#">LinkedIn</a>
+<a class="text-[#191c1a]/70 dark:text-[#f8faf5]/70 font-body text-sm hover:text-[#4d6703] dark:hover:text-[#cbec7f] transition-all" href="#">Global Systems</a>
+</div>
+</div>
+</footer>
+</body></html>
